@@ -1,47 +1,44 @@
-const startButton =
-    document.getElementById("start-button");
+const characterCards = document.querySelectorAll(".character-card");
+const selectedCharacterText = document.getElementById("selected-character");
+const startButton = document.getElementById("start-button");
 
-const continueButton =
-    document.getElementById("continue-button");
+let selectedCharacter = "warrior";
 
-const aboutButton =
-    document.getElementById("about-button");
+characterCards.forEach(card => {
 
-const message =
-    document.getElementById("menu-message");
+    card.addEventListener("click", () => {
 
+        // Remove selection from every character
+        characterCards.forEach(character => {
+            character.classList.remove("selected");
+        });
 
-/* ========================================
-   START GAME
-======================================== */
+        // Select clicked character
+        card.classList.add("selected");
+
+        // Store selected character
+        selectedCharacter = card.dataset.character;
+
+        // Update text
+        selectedCharacterText.textContent =
+            selectedCharacter.toUpperCase();
+
+    });
+
+});
+
 
 startButton.addEventListener("click", () => {
 
-    message.textContent =
-        "Your future begins in 2026...";
+    console.log("Selected character:", selectedCharacter);
 
-});
+    // Store character so the next game screen can access it
+    localStorage.setItem(
+        "selectedCharacter",
+        selectedCharacter
+    );
 
-
-/* ========================================
-   CONTINUE
-======================================== */
-
-continueButton.addEventListener("click", () => {
-
-    message.textContent =
-        "No timeline found. Begin your first future.";
-
-});
-
-
-/* ========================================
-   ABOUT
-======================================== */
-
-aboutButton.addEventListener("click", () => {
-
-    message.textContent =
-        "Every decision you make shapes the world you inherit.";
+    // Move to game screen
+    window.location.href = "game.html";
 
 });

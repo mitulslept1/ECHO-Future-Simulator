@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Game</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #111;
+            color: white;
+
+            font-family: monospace;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <h1>GAME STARTING...</h1>
+
+        <p id="character"></p>
+    </div>
+
+    <script>
+
+        const character =
+            localStorage.getItem("selectedCharacter");
+
+        document.getElementById("character").textContent =
+            "Character: " + character.toUpperCase();
+
+    </script>
+
+</body>
+
+</html>
