@@ -563,8 +563,8 @@ body {
 }
 
 .character-image img {
-    width: 220px;
-    height: 220px;
+    width: 150%;
+    height: 150%;
 
     object-fit: contain;
 
