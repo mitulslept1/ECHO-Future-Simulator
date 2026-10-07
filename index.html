@@ -3,103 +3,254 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ECHO - Choose Your Role</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ECHO | Future Simulator</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="game-container">
+    <main class="main-menu">
 
-        <h1>CHOOSE YOUR ROLE</h1>
+        <div class="background-grid"></div>
+        <div class="scanlines"></div>
 
-        <p class="subtitle">
-            Your role determines your starting advantage.
-        </p>
+        <!-- TOP STATUS BAR -->
+        <header class="top-bar">
 
-        <div class="character-container">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                SYSTEM ONLINE
+            </div>
 
-            <!-- MAYOR -->
-            <button class="character-card selected" data-character="mayor">
+            <div class="simulation-year">
+                YEAR: <span>2026</span>
+            </div>
 
-                <div class="role-icon">🏙️</div>
+        </header>
 
-                <h2>THE MAYOR</h2>
 
-                <p>
-                    Better influence over city decisions
+        <!-- MAIN MENU CONTENT -->
+        <section class="menu-content">
+
+            <div class="title-section">
+
+                <p class="classification">
+                    FUTURE SIMULATION PROGRAM
                 </p>
 
-            </button>
+                <h1>ECHO</h1>
 
+                <div class="title-line"></div>
 
-            <!-- SCIENTIST -->
-            <button class="character-card" data-character="scientist">
-
-                <div class="role-icon">🔬</div>
-
-                <h2>THE SCIENTIST</h2>
-
-                <p>
-                    Better understanding of environmental consequences
+                <p class="tagline">
+                    EVERY CHOICE LEAVES A FUTURE
                 </p>
 
-            </button>
+            </div>
 
 
-            <!-- COMMUNITY LEADER -->
-            <button class="character-card" data-character="communityLeader">
+            <!-- MENU BUTTONS -->
+            <nav class="menu-buttons">
 
-                <div class="role-icon">🌱</div>
+                <button
+                    id="new-game-button"
+                    class="menu-button primary"
+                >
+                    <span class="button-number">01</span>
 
-                <h2>THE COMMUNITY LEADER</h2>
+                    <span class="button-text">
+                        NEW SIMULATION
+                    </span>
 
-                <p>
-                    Stronger public support
+                    <span class="button-arrow">
+                        ▶
+                    </span>
+                </button>
+
+
+                <button
+                    id="continue-button"
+                    class="menu-button"
+                >
+                    <span class="button-number">02</span>
+
+                    <span class="button-text">
+                        CONTINUE
+                    </span>
+
+                    <span class="button-arrow">
+                        ▶
+                    </span>
+                </button>
+
+
+                <button
+                    id="how-to-play-button"
+                    class="menu-button"
+                >
+                    <span class="button-number">03</span>
+
+                    <span class="button-text">
+                        HOW TO PLAY
+                    </span>
+
+                    <span class="button-arrow">
+                        ▶
+                    </span>
+                </button>
+
+
+                <button
+                    id="credits-button"
+                    class="menu-button"
+                >
+                    <span class="button-number">04</span>
+
+                    <span class="button-text">
+                        CREDITS
+                    </span>
+
+                    <span class="button-arrow">
+                        ▶
+                    </span>
+                </button>
+
+            </nav>
+
+        </section>
+
+
+        <!-- BOTTOM INFORMATION -->
+        <footer class="bottom-bar">
+
+            <div>
+                ECHO // FUTURE SIMULATOR
+            </div>
+
+            <div>
+                TIMELINE:
+                2026 → 2030 → 2040 → 2050
+            </div>
+
+            <div>
+                v1.0
+            </div>
+
+        </footer>
+
+
+        <!-- HOW TO PLAY PANEL -->
+        <div
+            id="how-to-play-panel"
+            class="info-panel hidden"
+        >
+
+            <div class="panel-box">
+
+                <button
+                    id="close-how-to-play"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+                <p class="panel-label">
+                    SIMULATION PROTOCOL
                 </p>
 
-            </button>
+                <h2>HOW TO PLAY</h2>
 
-
-            <!-- ENTREPRENEUR -->
-            <button class="character-card" data-character="entrepreneur">
-
-                <div class="role-icon">💼</div>
-
-                <h2>THE ENTREPRENEUR</h2>
+                <div class="panel-line"></div>
 
                 <p>
-                    Stronger economic opportunities
+                    Your decisions shape the future.
                 </p>
 
-            </button>
+                <p>
+                    Choose your role, make decisions,
+                    and observe how those decisions
+                    affect the city across multiple
+                    decades.
+                </p>
+
+                <div class="timeline">
+
+                    <span>2026</span>
+                    <span>→</span>
+                    <span>2030</span>
+                    <span>→</span>
+                    <span>2040</span>
+                    <span>→</span>
+                    <span>2050</span>
+
+                </div>
+
+                <p class="warning-text">
+                    THERE ARE NO PERFECT CHOICES.
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="selected-info">
+        <!-- CREDITS PANEL -->
+        <div
+            id="credits-panel"
+            class="info-panel hidden"
+        >
 
-            <p>Selected Role:</p>
+            <div class="panel-box">
 
-            <span id="selected-character">
-                THE MAYOR
-            </span>
+                <button
+                    id="close-credits"
+                    class="close-button"
+                >
+                    ×
+                </button>
 
-            <p id="advantage">
-                Better influence over city decisions
-            </p>
+                <p class="panel-label">
+                    DEVELOPMENT TEAM
+                </p>
+
+                <h2>ECHO</h2>
+
+                <div class="panel-line"></div>
+
+                <p>
+                    A future simulation game created
+                    for the ICRGU Hackathon.
+                </p>
+
+                <div class="credits-list">
+
+                    <p>DESIGN</p>
+
+                    <p>DEVELOPMENT</p>
+
+                    <p>ART</p>
+
+                    <p>STORY &amp; SYSTEM DESIGN</p>
+
+                </div>
+
+                <p class="credits-footer">
+                    BUILD THE FUTURE YOU WANT TO SEE.
+                </p>
+
+            </div>
 
         </div>
 
+    </main>
 
-        <button id="start-button">
-            START GAME
-        </button>
-
-    </div>
 
     <script src="game.js"></script>
 
