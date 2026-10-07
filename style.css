@@ -6,153 +6,264 @@
 
 body {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background: #111;
+    background:
+        radial-gradient(circle at center, #202020, #0d0d0d);
+
     color: white;
 
     font-family: monospace;
 }
 
-.game-container {
-    width: 90%;
-    max-width: 1000px;
 
-    padding: 40px;
+/* MAIN CONTAINER */
+
+.game-container {
+
+    width: 92%;
+    max-width: 1050px;
+
+    padding: 45px;
 
     text-align: center;
 
-    border: 4px solid white;
-    background: #1b1b1b;
+    background: #181818;
+
+    border: 4px solid #eeeeee;
+
+    box-shadow:
+        0 0 30px rgba(255, 255, 255, 0.08);
 }
+
+
+/* TITLE */
 
 h1 {
+
+    margin-bottom: 10px;
+
+    font-size: 36px;
+
+    letter-spacing: 5px;
+}
+
+
+/* SUBTITLE */
+
+.subtitle {
+
     margin-bottom: 40px;
 
-    font-size: 32px;
-    letter-spacing: 3px;
+    color: #aaaaaa;
+
+    font-size: 16px;
 }
+
+
+/* CHARACTER GRID */
 
 .character-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
 
-    flex-wrap: wrap;
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    max-width: 850px;
+
+    margin: auto;
 }
 
-.character-card {
-    width: 220px;
-    padding: 20px;
 
-    background: #252525;
+/* CHARACTER CARD */
+
+.character-card {
+
+    min-height: 230px;
+
+    padding: 25px;
+
+    background: #242424;
+
     color: white;
 
-    border: 4px solid #555;
+    border: 4px solid #555555;
 
     cursor: pointer;
 
     font-family: monospace;
+
+    transition:
+        transform 0.15s,
+        border-color 0.15s,
+        background 0.15s;
+}
+
+
+/* HOVER */
+
+.character-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #dddddd;
+
+    background: #303030;
+}
+
+
+/* SELECTED */
+
+.character-card.selected {
+
+    border-color: #ffd000;
+
+    background: #303030;
+
+    box-shadow:
+        0 0 15px rgba(255, 208, 0, 0.2);
+}
+
+
+/* ROLE ICON */
+
+.role-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+/* ROLE NAME */
+
+.character-card h2 {
+
+    margin-bottom: 12px;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ROLE DESCRIPTION */
+
+.character-card p {
+
+    color: #aaaaaa;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+}
+
+
+/* SELECTED ROLE */
+
+.selected-info {
+
+    margin-top: 35px;
+
+    font-size: 18px;
+}
+
+
+.selected-info > p:first-child {
+
+    color: #aaaaaa;
+
+    margin-bottom: 8px;
+}
+
+
+#selected-character {
+
+    display: block;
+
+    color: #ffd000;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+
+#advantage {
+
+    color: #cccccc;
+
+    font-size: 14px;
+}
+
+
+/* START BUTTON */
+
+#start-button {
+
+    margin-top: 30px;
+
+    padding: 16px 45px;
+
+    background: #ffd000;
+
+    color: #111111;
+
+    border: 4px solid white;
+
+    font-family: monospace;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
 
     transition: 0.15s;
 }
 
-.character-card:hover {
-    transform: translateY(-8px);
-    border-color: white;
-}
-
-.character-card.selected {
-    border-color: #ffd700;
-    background: #333;
-}
-
-.sprite {
-    width: 120px;
-    height: 160px;
-
-    margin: 0 auto 20px;
-
-    image-rendering: pixelated;
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/*
-   Temporary sprites.
-
-   Replace these backgrounds with your actual
-   pixel-art character images later.
-*/
-
-.warrior {
-    background: linear-gradient(
-        #777 0 25%,
-        #333 25% 60%,
-        #8b4513 60% 100%
-    );
-}
-
-.mage {
-    background: linear-gradient(
-        #222 0 20%,
-        #643c9e 20% 70%,
-        #111 70% 100%
-    );
-}
-
-.archer {
-    background: linear-gradient(
-        #d49b6a 0 20%,
-        #315c35 20% 70%,
-        #222 70% 100%
-    );
-}
-
-h2 {
-    margin-bottom: 8px;
-}
-
-.character-card p {
-    color: #aaa;
-}
-
-.selected-info {
-    margin-top: 40px;
-
-    font-size: 20px;
-}
-
-#selected-character {
-    color: #ffd700;
-    font-weight: bold;
-}
-
-#start-button {
-    margin-top: 25px;
-
-    padding: 15px 40px;
-
-    background: #ffd700;
-    color: #111;
-
-    border: 4px solid #fff;
-
-    font-family: monospace;
-    font-size: 20px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
 
 #start-button:hover {
+
     background: white;
+
+    transform: translateY(-3px);
 }
 
+
 #start-button:active {
-    transform: translateY(3px);
+
+    transform: translateY(2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .game-container {
+
+        padding: 25px;
+
+    }
+
+    h1 {
+
+        font-size: 25px;
+
+    }
+
+    .character-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
 }

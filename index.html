@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Selection</title>
+
+    <title>ECHO - Choose Your Role</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,40 +14,95 @@
 
     <div class="game-container">
 
-        <h1>CHOOSE YOUR CHARACTER</h1>
+        <h1>CHOOSE YOUR ROLE</h1>
+
+        <p class="subtitle">
+            Your role determines your starting advantage.
+        </p>
 
         <div class="character-container">
 
-            <button class="character-card selected" data-character="warrior">
-                <div class="sprite warrior"></div>
-                <h2>WARRIOR</h2>
-                <p>Strong & Brave</p>
+            <!-- MAYOR -->
+            <button class="character-card selected" data-character="mayor">
+
+                <div class="role-icon">🏙️</div>
+
+                <h2>THE MAYOR</h2>
+
+                <p>
+                    Better influence over city decisions
+                </p>
+
             </button>
 
-            <button class="character-card" data-character="mage">
-                <div class="sprite mage"></div>
-                <h2>MAGE</h2>
-                <p>Wise & Powerful</p>
+
+            <!-- SCIENTIST -->
+            <button class="character-card" data-character="scientist">
+
+                <div class="role-icon">🔬</div>
+
+                <h2>THE SCIENTIST</h2>
+
+                <p>
+                    Better understanding of environmental consequences
+                </p>
+
             </button>
 
-            <button class="character-card" data-character="archer">
-                <div class="sprite archer"></div>
-                <h2>ARCHER</h2>
-                <p>Fast & Precise</p>
+
+            <!-- COMMUNITY LEADER -->
+            <button class="character-card" data-character="communityLeader">
+
+                <div class="role-icon">🌱</div>
+
+                <h2>THE COMMUNITY LEADER</h2>
+
+                <p>
+                    Stronger public support
+                </p>
+
+            </button>
+
+
+            <!-- ENTREPRENEUR -->
+            <button class="character-card" data-character="entrepreneur">
+
+                <div class="role-icon">💼</div>
+
+                <h2>THE ENTREPRENEUR</h2>
+
+                <p>
+                    Stronger economic opportunities
+                </p>
+
             </button>
 
         </div>
+
 
         <div class="selected-info">
-            <p>Selected:</p>
-            <span id="selected-character">WARRIOR</span>
+
+            <p>Selected Role:</p>
+
+            <span id="selected-character">
+                THE MAYOR
+            </span>
+
+            <p id="advantage">
+                Better influence over city decisions
+            </p>
+
         </div>
 
-        <button id="start-button">START GAME</button>
+
+        <button id="start-button">
+            START GAME
+        </button>
 
     </div>
 
-
     <script src="game.js"></script>
+
 </body>
+
 </html>
