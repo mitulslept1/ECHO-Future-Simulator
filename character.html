@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ECHO - Choose Your Role</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>CHOOSE YOUR ROLE</h1>
+
+        <p class="subtitle">
+            Your role determines your starting advantage.
+        </p>
+
+        <div class="character-container">
+
+            <!-- MAYOR -->
+            <button class="character-card selected" data-character="mayor">
+
+                <div class="role-icon">🏙️</div>
+
+                <h2>THE MAYOR</h2>
+
+                <p>
+                    Better influence over city decisions
+                </p>
+
+            </button>
+
+
+            <!-- SCIENTIST -->
+            <button class="character-card" data-character="scientist">
+
+                <div class="role-icon">🔬</div>
+
+                <h2>THE SCIENTIST</h2>
+
+                <p>
+                    Better understanding of environmental consequences
+                </p>
+
+            </button>
+
+
+            <!-- COMMUNITY LEADER -->
+            <button class="character-card" data-character="communityLeader">
+
+                <div class="role-icon">🌱</div>
+
+                <h2>THE COMMUNITY LEADER</h2>
+
+                <p>
+                    Stronger public support
+                </p>
+
+            </button>
+
+
+            <!-- ENTREPRENEUR -->
+            <button class="character-card" data-character="entrepreneur">
+
+                <div class="role-icon">💼</div>
+
+                <h2>THE ENTREPRENEUR</h2>
+
+                <p>
+                    Stronger economic opportunities
+                </p>
+
+            </button>
+
+        </div>
+
+
+        <div class="selected-info">
+
+            <p>Selected Role:</p>
+
+            <span id="selected-character">
+                THE MAYOR
+            </span>
+
+            <p id="advantage">
+                Better influence over city decisions
+            </p>
+
+        </div>
+
+
+        <button id="start-button">
+            START GAME
+        </button>
+
+    </div>
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>
