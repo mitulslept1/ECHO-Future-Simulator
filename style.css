@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #a3e635;
+    --green-light: #bef264;
+    --dark: #050b0f;
+    --building: #13252e;
+    --building-border: #29414b;
+    --text-muted: #a5b4bc;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--dark);
+    color: white;
+}
+
+
+/* ========================================
+   MAIN MENU
+======================================== */
+
+#main-menu {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* ========================================
+   CITY BACKGROUND
+======================================== */
+
+.city {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #07141c 0%,
+            #0b1820 55%,
+            #111d23 100%
+        );
+}
+
+
+/* Sun */
+
+.sun {
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: 13%;
+    top: 13%;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 30px rgba(163, 230, 53, 0.35),
+        0 0 100px rgba(163, 230, 53, 0.12);
+}
+
+
+/* Buildings */
+
+.buildings {
+    position: absolute;
+
+    left: 7%;
+    right: 7%;
+    bottom: 0;
+
+    height: 55%;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 14px;
+}
+
+
+.building {
+    position: relative;
+
+    background: var(--building);
+
+    border: 1px solid var(--building-border);
+
+    border-bottom: none;
+}
+
+
+/* Windows */
+
+.building::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 15px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(190, 240, 200, 0.18) 0 5px,
+            transparent 5px 17px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(190, 240, 200, 0.13) 0 5px,
+            transparent 5px 17px
+        );
+}
+
+
+.building-1 {
+    width: 13%;
+    height: 34%;
+}
+
+.building-2 {
+    width: 16%;
+    height: 58%;
+}
+
+.building-3 {
+    width: 12%;
+    height: 45%;
+}
+
+.building-4 {
+    width: 19%;
+    height: 76%;
+}
+
+.building-5 {
+    width: 14%;
+    height: 51%;
+}
+
+.building-6 {
+    width: 16%;
+    height: 66%;
+}
+
+
+/* Ground */
+
+.ground {
+    position: absolute;
+
+    left: -5%;
+    right: -5%;
+    bottom: -45px;
+
+    height: 130px;
+
+    background: #101a21;
+
+    transform: skewY(-5deg);
+
+    border-top: 1px solid #30444c;
+}
+
+
+.ground::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    right: 10%;
+
+    top: 50%;
+
+    border-top: 3px dashed #65747d;
+}
+
+
+/* ========================================
+   OVERLAY
+======================================== */
+
+.overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 10, 14, 0.98) 0%,
+            rgba(3, 10, 14, 0.88) 35%,
+            rgba(3, 10, 14, 0.40) 75%,
+            rgba(3, 10, 14, 0.50) 100%
+        );
+}
+
+
+/* ========================================
+   MENU CONTENT
+======================================== */
+
+.menu-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+    height: 100%;
+
+    padding-left: 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+
+/* Small heading */
+
+.eyebrow {
+    color: var(--green);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 14px;
+}
+
+
+/* ECHO */
+
+h1 {
+    font-size: clamp(70px, 9vw, 120px);
+
+    line-height: 0.85;
+
+    letter-spacing: 14px;
+
+    font-weight: 900;
+
+    color: #f8fafc;
+}
+
+
+/* Subtitle */
+
+.subtitle {
+    margin-top: 20px;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    font-weight: 500;
+}
+
+
+/* Divider */
+
+.divider {
+    width: 90px;
+
+    height: 2px;
+
+    margin: 30px 0;
+
+    background: var(--green);
+}
+
+
+/* ========================================
+   BUTTONS
+======================================== */
+
+.menu-buttons {
+    width: 310px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+button {
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border-radius: 9px;
+
+    border: 1px solid #344a54;
+
+    background: rgba(10, 25, 32, 0.92);
+
+    color: #e5edf0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+button:hover {
+    transform: translateX(6px);
+
+    border-color: var(--green);
+
+    background:
+        rgba(163, 230, 53, 0.10);
+}
+
+
+button:focus-visible {
+    outline: 2px solid var(--green-light);
+
+    outline-offset: 3px;
+}
+
+
+/* Main button */
+
+.primary-button {
+    background: var(--green);
+
+    color: #101b0b;
+
+    border-color: var(--green-light);
+}
+
+
+.primary-button:hover {
+    background: var(--green-light);
+
+    color: #0d1609;
+}
+
+
+/* Message */
+
+#menu-message {
+    min-height: 20px;
+
+    margin-top: 16px;
+
+    color: var(--green-light);
+
+    font-size: 13px;
+}
+
+
+/* Footer */
+
+.footer {
+    margin-top: 26px;
+
+    color: #65747d;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .menu-content {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 65px;
+    }
+
+    .menu-buttons {
+        width: min(310px, 85vw);
+    }
+
+    .sun {
+        right: -30px;
+        top: 10%;
+    }
+
+    .overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 10, 14, 0.97),
+                rgba(3, 10, 14, 0.75)
+            );
+    }
+}
