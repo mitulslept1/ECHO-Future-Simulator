@@ -3,48 +3,272 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Game</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <style>
+    <title>ECHO | Future Simulator</title>
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #111;
-            color: white;
-
-            font-family: monospace;
-            text-align: center;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div>
-        <h1>GAME STARTING...</h1>
+    <!-- =========================================
+         MAIN MENU
+    ========================================== -->
 
-        <p id="character"></p>
-    </div>
+    <main class="main-menu">
 
-    <script>
+        <!-- Background atmosphere -->
+        <div class="background-grid"></div>
 
-        const character =
-            localStorage.getItem("selectedCharacter");
+        <div class="scanlines"></div>
 
-        document.getElementById("character").textContent =
-            "Character: " + character.toUpperCase();
 
-    </script>
+        <!-- =====================================
+             TOP STATUS BAR
+        ====================================== -->
+
+        <header class="top-bar">
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                SYSTEM ONLINE
+            </div>
+
+            <div class="simulation-year">
+                YEAR: <span>2026</span>
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             CENTER CONTENT
+        ====================================== -->
+
+        <section class="menu-content">
+
+            <div class="title-section">
+
+                <p class="classification">
+                    FUTURE SIMULATION PROGRAM
+                </p>
+
+                <h1>ECHO</h1>
+
+                <div class="title-line"></div>
+
+                <p class="tagline">
+                    EVERY CHOICE LEAVES A FUTURE
+                </p>
+
+            </div>
+
+
+            <!-- =================================
+                 MENU BUTTONS
+            ================================== -->
+
+            <nav class="menu-buttons">
+
+                <button
+                    id="new-game-button"
+                    class="menu-button primary"
+                >
+                    <span class="button-number">01</span>
+                    <span class="button-text">
+                        NEW SIMULATION
+                    </span>
+                    <span class="button-arrow">▶</span>
+                </button>
+
+
+                <button
+                    id="continue-button"
+                    class="menu-button"
+                >
+                    <span class="button-number">02</span>
+                    <span class="button-text">
+                        CONTINUE
+                    </span>
+                    <span class="button-arrow">▶</span>
+                </button>
+
+
+                <button
+                    id="how-to-play-button"
+                    class="menu-button"
+                >
+                    <span class="button-number">03</span>
+                    <span class="button-text">
+                        HOW TO PLAY
+                    </span>
+                    <span class="button-arrow">▶</span>
+                </button>
+
+
+                <button
+                    id="credits-button"
+                    class="menu-button"
+                >
+                    <span class="button-number">04</span>
+                    <span class="button-text">
+                        CREDITS
+                    </span>
+                    <span class="button-arrow">▶</span>
+                </button>
+
+            </nav>
+
+        </section>
+
+
+        <!-- =====================================
+             BOTTOM INFORMATION
+        ====================================== -->
+
+        <footer class="bottom-bar">
+
+            <div>
+                ECHO // FUTURE SIMULATOR
+            </div>
+
+            <div>
+                TIMELINE: 2026 → 2030 → 2040 → 2050
+            </div>
+
+            <div>
+                v1.0
+            </div>
+
+        </footer>
+
+
+        <!-- =====================================
+             HOW TO PLAY MODAL
+        ====================================== -->
+
+        <div
+            id="how-to-play-panel"
+            class="info-panel hidden"
+        >
+
+            <div class="panel-box">
+
+                <button
+                    id="close-how-to-play"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+                <p class="panel-label">
+                    SIMULATION PROTOCOL
+                </p>
+
+                <h2>HOW TO PLAY</h2>
+
+                <div class="panel-line"></div>
+
+                <p>
+                    Your decisions shape the future.
+                </p>
+
+                <p>
+                    Choose your role, make decisions,
+                    and observe how those decisions
+                    affect the city across multiple
+                    decades.
+                </p>
+
+                <div class="timeline">
+
+                    <span>2026</span>
+                    <span>→</span>
+                    <span>2030</span>
+                    <span>→</span>
+                    <span>2040</span>
+                    <span>→</span>
+                    <span>2050</span>
+
+                </div>
+
+                <p class="warning-text">
+                    THERE ARE NO PERFECT CHOICES.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             CREDITS MODAL
+        ====================================== -->
+
+        <div
+            id="credits-panel"
+            class="info-panel hidden"
+        >
+
+            <div class="panel-box">
+
+                <button
+                    id="close-credits"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+                <p class="panel-label">
+                    DEVELOPMENT TEAM
+                </p>
+
+                <h2>ECHO</h2>
+
+                <div class="panel-line"></div>
+
+                <p>
+                    A future simulation game created
+                    for the ICRGU Hackathon.
+                </p>
+
+                <div class="credits-list">
+
+                    <p>
+                        DESIGN
+                    </p>
+
+                    <p>
+                        DEVELOPMENT
+                    </p>
+
+                    <p>
+                        ART
+                    </p>
+
+                    <p>
+                        STORY & SYSTEM DESIGN
+                    </p>
+
+                </div>
+
+                <p class="credits-footer">
+                    BUILD THE FUTURE YOU WANT TO SEE.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="game.js"></script>
 
 </body>
 
